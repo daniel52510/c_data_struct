@@ -1,0 +1,3 @@
+/Users/danielblazquez/CLionProjects/learn_c++/cmake-build-debug/CMakeFiles/learn_c__.dir
+/Users/danielblazquez/CLionProjects/learn_c++/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/danielblazquez/CLionProjects/learn_c++/cmake-build-debug/CMakeFiles/rebuild_cache.dir
