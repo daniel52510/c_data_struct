@@ -14,11 +14,12 @@ public:
         cout << "array memory address: " << &arr_size << endl;
         cout << "array size value: " << arr_size << endl;
      }
-    int get_arr_size() {
-        return sizeof(arr)/sizeof(int);
+     void initialize_arr() {
+        for(int i = 0; i < arr_size; i++) {
+            arr[i] = NULL;
+        }
     }
     void print_arr() {
-        cout << "Array Size: " << arr_size << endl;
         cout << "Array: {";
         for(int i = 0; i < arr_size; i++) {
             cout << arr[i];
@@ -31,5 +32,9 @@ public:
             }
         }
     }
+    void add_arr(int x) {
+        for(int i = 0; i < arr_size; i++) {
 
+        }
+    }
 };
