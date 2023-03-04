@@ -1,6 +1,21 @@
 #include <iostream>
 using namespace std;
+class Car {
+public:
+    string brand;
+    string model;
+    string type;
+    int year;
+    double weight;
+};
 int main() {
+    Car car1;
+    car1.brand = "BMW";
+    car1.model = "M3";
+    car1.type = "Coupe";
+    car1.year = 2017;
+    car1.weight = 2304.60;
+
     string food = "Pizza";
     string side = "French Fries";
     cout << "Memory Address from food: " << &food << endl;
@@ -21,6 +36,7 @@ int main() {
 
     cout << "Current Pointer Address: " << ptr << endl;
     cout << "Current Pointer Value: " << *ptr << endl;
+
+    cout << car1.year << " " << car1.brand << " " << car1.model;
     return 0;
-    //What is Object Oriented Programming?
 }
