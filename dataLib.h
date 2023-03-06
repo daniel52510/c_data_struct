@@ -8,16 +8,9 @@ class Array {
 public:
     int* size_ptr = &arr_size;
     int arr_size;
-    int* arr = new int[*size_ptr];
-    void set_arr_size(int as) {
-        *size_ptr = as;
-        cout << "array memory address: " << &arr_size << endl;
-        cout << "array size value: " << arr_size << endl;
-     }
-     void initialize_arr() {
-        for(int i = 0; i < arr_size; i++) {
-            arr[i] = NULL;
-        }
+    int* arr;
+    Array() {
+        start();
     }
     void print_arr() {
         cout << "Array: {";
@@ -32,9 +25,25 @@ public:
             }
         }
     }
+    void start() {
+        arr = new int[*size_ptr];
+        arr_size = 0;
+    }
     void add_arr(int x) {
-        for(int i = 0; i < arr_size; i++) {
-
-        }
+       if(*size_ptr == 0) {
+           arr[0] = x;
+       }
+       else {
+           int new_size = *size_ptr;
+           cout << "New Size: " << new_size << endl;
+           int *temp = new int[new_size];
+           for(int i = 0; i < new_size; i++) {
+               temp[i] = arr[i];
+           }
+           delete[] arr;
+           arr = temp;
+           arr[new_size] = x;
+       }
+        *size_ptr += 1;
     }
 };
