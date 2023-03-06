@@ -14,14 +14,19 @@ public:
     }
     void print_arr() {
         cout << "Array: {";
-        for(int i = 0; i < arr_size; i++) {
-            cout << arr[i];
-            if(i != arr_size - 1) {
-                 cout << ",";
-            }
-            else {
-                cout << "}" << endl;
-                break;
+        if(*size_ptr == 0) {
+            cout << "}" << endl;
+        }
+        else {
+            for(int i = 0; i < arr_size; i++) {
+                cout << arr[i];
+                if(i != arr_size - 1) {
+                    cout << ",";
+                }
+                else {
+                    cout << "}" << endl;
+                    break;
+                }
             }
         }
     }
@@ -35,7 +40,7 @@ public:
        }
        else {
            int new_size = *size_ptr;
-           cout << "New Size: " << new_size << endl;
+           //cout << "New Size: " << new_size << endl;
            int *temp = new int[new_size];
            for(int i = 0; i < new_size; i++) {
                temp[i] = arr[i];
