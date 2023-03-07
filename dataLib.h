@@ -77,22 +77,28 @@ public:
         //you shift the number to the right until the number is
         //not greater than the left most element. You place it in front of it.
        cout << "Starting Array: " << endl;
+       cout << "Size Pointer: " << *size_ptr << endl;
         print_arr();
        if(*size_ptr == 0 or *size_ptr == 1) {
            cout << "Error, there is nothing to sort!" << endl;
        }
        else {
            for(int i = 1; i < *size_ptr; i++) {
+               int temp;
+               int *temp_ptr = &temp;
+               *temp_ptr = arr[i];
                for(int j = i - 1; j >= 0; j--) {
-                   int temp = arr[i];
-                   if(arr[j] > temp){
-                       //shift array elements below
-                       temp = arr[j];
-                       arr[j] = arr[j + 1];
-
+                   cout << "temp var: " << *temp_ptr << endl;
+                   if(arr[j] > *temp_ptr){
+                       //stays the same
+                       while(arr[j] > *temp_ptr)
+                       {
+                           arr[j] = arr[j + 1];
+                       }
+                       *temp_ptr = arr[j];
                    }
                    else {
-
+                        break;
                    }
                }
            }
